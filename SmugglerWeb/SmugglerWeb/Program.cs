@@ -1,4 +1,3 @@
-using SmugglerWeb.Client.Pages;
 using SmugglerWeb.Components;
 
 namespace SmugglerWeb
@@ -28,6 +27,7 @@ namespace SmugglerWeb
                 app.UseHsts();
             }
 
+            // 도커때문에 여기 빼야함
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
@@ -38,7 +38,8 @@ namespace SmugglerWeb
                 .AddInteractiveWebAssemblyRenderMode()
                 .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
 
-            app.Run();
+            // 이거는 일단 고정해야 도커에서 계속 갱신해도 문제없이 동작함
+            app.Run("http://*:5000");
         }
     }
 }
