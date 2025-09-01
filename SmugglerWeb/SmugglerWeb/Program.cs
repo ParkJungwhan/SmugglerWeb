@@ -16,24 +16,6 @@ namespace SmugglerWeb
 
             var app = builder.Build();
 
-            int httpPort = 6000;
-            int httpsPort = 6001;
-
-            //builder.Services.AddHttpsRedirection(options =>
-            //{
-            //    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
-            //    options.HttpsPort = httpsPort;
-            //});
-
-            //builder.WebHost.ConfigureKestrel(serverOptions =>
-            //{
-            //    serverOptions.ListenAnyIP(httpPort);
-            //    serverOptions.ListenAnyIP(httpsPort, listenOptions =>
-            //    {
-            //        listenOptions.UseHttps();
-            //    });
-            //});
-
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
