@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-MudBlazorWebApp_Sample-3e790f2a-3834-426e-9a3c-f7d2f21811f6</UserSecretsId>
+    <RootNamespace>MudBlazorWebApp_Sample</RootNamespace>
+    <AssemblyName>`$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\MudBlazorWebApp-Sample.Client\MudBlazorWebApp-Sample.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.*" />
+    <PackageReference Include="Extensions.MudBlazor.StaticInput" Version="3.*" />
+  </ItemGroup>
+
+</Project>

@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugglerWeb", "SmugglerWeb\SmugglerWeb\SmugglerWeb.csproj", "{56D60586-8D24-442A-80BC-C7D9985CEFC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmugglerWeb.Client", "SmugglerWeb\SmugglerWeb.Client\SmugglerWeb.Client.csproj", "{EC70A32A-2617-4C45-A68A-F42786FFA953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent-Smuggler-Sample", "Smuggler-Sample\Smuggler-Sample\Fluent-Smuggler-Sample.csproj", "{D6AF5393-C62D-4701-850F-E0BC6E120788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent-Smuggler-Sample.Client", "Smuggler-Sample\Smuggler-Sample.Client\Fluent-Smuggler-Sample.Client.csproj", "{5062CE50-4540-4220-88F0-FF0AC616AB3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorWebApp-Sample", "MudBlazorWebApp-Sample\MudBlazorWebApp-Sample\MudBlazorWebApp-Sample.csproj", "{04EDFF5E-6551-477D-8EC3-38DA988B3000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorWebApp-Sample.Client", "MudBlazorWebApp-Sample\MudBlazorWebApp-Sample.Client\MudBlazorWebApp-Sample.Client.csproj", "{219CFB02-67C8-4186-9DF5-E4B03DB315E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{EC70A32A-2617-4C45-A68A-F42786FFA953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC70A32A-2617-4C45-A68A-F42786FFA953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC70A32A-2617-4C45-A68A-F42786FFA953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AF5393-C62D-4701-850F-E0BC6E120788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AF5393-C62D-4701-850F-E0BC6E120788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AF5393-C62D-4701-850F-E0BC6E120788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AF5393-C62D-4701-850F-E0BC6E120788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5062CE50-4540-4220-88F0-FF0AC616AB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5062CE50-4540-4220-88F0-FF0AC616AB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5062CE50-4540-4220-88F0-FF0AC616AB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5062CE50-4540-4220-88F0-FF0AC616AB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04EDFF5E-6551-477D-8EC3-38DA988B3000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EDFF5E-6551-477D-8EC3-38DA988B3000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EDFF5E-6551-477D-8EC3-38DA988B3000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EDFF5E-6551-477D-8EC3-38DA988B3000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219CFB02-67C8-4186-9DF5-E4B03DB315E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219CFB02-67C8-4186-9DF5-E4B03DB315E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219CFB02-67C8-4186-9DF5-E4B03DB315E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219CFB02-67C8-4186-9DF5-E4B03DB315E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,3 +1,4 @@
+using MudBlazor.Services;
 using SmugglerWeb.Components;
 
 namespace SmugglerWeb
@@ -7,6 +8,14 @@ namespace SmugglerWeb
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            //builder.Services.AddRazorComponents()
+            //.AddInteractiveServerComponents()
+            //.AddInteractiveWebAssemblyComponents();
+
+            // Add MudBlazor services
+            builder.Services.AddMudServices();
 
             // Add services to the container.
             builder.Services.AddRazorComponents()
@@ -39,7 +48,11 @@ namespace SmugglerWeb
                 .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
 
             // 이거는 일단 고정해야 도커에서 계속 갱신해도 문제없이 동작함
+#if DEBUG
+            app.Run("https://localhost:8001");
+#else
             app.Run("http://*:5000");
+#endif
         }
     }
 }
