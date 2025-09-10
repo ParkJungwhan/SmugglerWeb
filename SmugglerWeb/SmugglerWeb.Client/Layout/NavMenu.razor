@@ -1,4 +1,5 @@
-﻿@rendermode InteractiveAuto
+﻿@using System.Diagnostics
+@rendermode InteractiveAuto
 
 <div class="navmenu">
     <input type="checkbox" title="Menu expand/collapse toggle" id="navmenu-toggle" class="navmenu-icon" />
@@ -6,8 +7,21 @@
     <nav class="sitenav" aria-labelledby="main-menu">
         <FluentNavMenu Id="main-menu" Width="250" Collapsible="true" Title="Navigation menu" @bind-Expanded="expanded" CustomToggle="true">
             <FluentNavLink Href="/" Match="NavLinkMatch.All" Icon="@(new Icons.Regular.Size20.Home())" IconColor="Color.Accent">Home</FluentNavLink>
+            <!-- Start Private -->
+            <FluentNavGroup OnClick="OnClick" Icon="@(new Icons.Regular.Size20.EarthLeaf())">
+                <TitleTemplate>Who is Smuggler?</TitleTemplate>
+                <ChildContent>
+                    <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafOne())">Item 3.1</FluentNavLink>
+                    <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafTwo())">Item 3.2</FluentNavLink>
+                    <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Smuggler</FluentNavLink>  
+                </ChildContent>
+            </FluentNavGroup>
+            <!-- End Private -->
+
+            <!-- Start Sample -->
             <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" IconColor="Color.Accent">Counter</FluentNavLink>
             <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" IconColor="Color.Accent">Weather</FluentNavLink>
+            <!-- End Sample -->
         </FluentNavMenu>
     </nav>
 </div>
@@ -15,4 +29,8 @@
 @code {
     private bool expanded = true;
 
+    void OnClick(MouseEventArgs e)
+    {
+        Debug.WriteLine("NavMenu item clicked");
+    }
 }
