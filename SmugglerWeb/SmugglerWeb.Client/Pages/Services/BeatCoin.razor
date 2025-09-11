@@ -1,0 +1,14 @@
+﻿@page "/services/beatcoin"
+@using System.Diagnostics
+@rendermode InteractiveAuto
+@inject PageHeaderState Header
+
+<!-- main content -->
+    content
+
+@code {
+    protected override void OnParametersSet()
+    {
+        Header.Set("Coin History");
+    }
+}

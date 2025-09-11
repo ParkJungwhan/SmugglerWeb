@@ -1,0 +1,52 @@
+﻿@inject NavigationManager Nav
+
+<FluentBreadcrumb>
+    @foreach (var item in ItemsToRender)
+    {
+        <FluentBreadcrumbItem Href="/">
+            @item.Text
+            @if (@item.Text == "Home")
+            {
+                <FluentIcon Value="@(new Icons.Regular.Size16.Home())" Color="@Color.Neutral" Slot="start" />
+            }
+            else
+            {
+                <FluentIcon Value="@(new Icons.Regular.Size16.Clipboard())" Color="@Color.Neutral" Slot="start" />
+            }
+        </FluentBreadcrumbItem>
+    }
+</FluentBreadcrumb>
+
+@code {
+    [Parameter] public Dictionary<string, string> NameMap { get; set; } = new();
+    [Parameter] public List<BreadcrumbItem>? Overrides { get; set; }  // 페이지에서 완전 제어하려면 사용
+
+    private List<BreadcrumbItem> ItemsToRender = new();
+
+    protected override void OnParametersSet()
+    {
+        if (Overrides is { Count: > 0 })
+        {
+            // 페이지가 직접 지정한 아이템 사용
+            ItemsToRender = Overrides;
+            return;
+        }
+
+        ItemsToRender = new() { new("Home", "/") }; // 항상 Home 먼저
+        var uri = Nav.ToBaseRelativePath(Nav.Uri);
+        if (string.IsNullOrWhiteSpace(uri)) return;
+
+        var parts = uri.Split('/', StringSplitOptions.RemoveEmptyEntries);
+        var path = "";
+        foreach (var part in parts)
+        {
+            path += "/" + part;
+            ItemsToRender.Add(new(
+                NameMap.TryGetValue(part, out var label) ? label : part,
+                path
+            ));
+        }
+    }
+
+    public record BreadcrumbItem(string Text, string Href);
+}

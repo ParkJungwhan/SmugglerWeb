@@ -1,0 +1,15 @@
+﻿@using Microsoft.FluentUI.AspNetCore.Components
+
+<div>
+    <FluentLabel Typo="Typography.H1">@Title</FluentLabel>
+    <FluentSpacer />
+    <FluentLabel Alignment="HorizontalAlignment.Right">
+        Latest Time : @LatestDateTime
+    </FluentLabel>
+</div>
+<FluentDivider Style="width: 100%;" Role="DividerRole.Presentation" />
+
+@code {
+    [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string? LatestDateTime { get; set; } = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
+}

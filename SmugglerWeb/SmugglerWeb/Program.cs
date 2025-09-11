@@ -19,6 +19,9 @@ namespace SmugglerWeb
                 options.ValidateClassNames = false;
             });
 
+            // 각 헤더 동적으로 파라미터 까티 받아서 처리해주기 위해 상태 관리 서비스 등록
+            builder.Services.AddScoped<PageHeaderState>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -1,47 +1,34 @@
 ﻿@using System.Diagnostics
 @rendermode InteractiveAuto
 
-<div class="navmenu">
-    <input type="checkbox" title="Menu expand/collapse toggle" id="navmenu-toggle" class="navmenu-icon" />
-    <label for="navmenu-toggle" class="navmenu-icon"><FluentIcon Value="@(new Icons.Regular.Size20.Navigation())" Color="Color.Fill" /></label>
-    <nav class="sitenav" aria-labelledby="main-menu">
-        <FluentNavMenu Id="main-menu" Width="250" Collapsible="true" Title="Navigation menu" @bind-Expanded="expanded" CustomToggle="true">
-            <FluentNavLink Href="/" Match="NavLinkMatch.All" Icon="@(new Icons.Regular.Size20.Home())" IconColor="Color.Accent">Home</FluentNavLink>
-            <!-- Start Private -->
-            <FluentNavGroup OnClick="OnClick" Icon="@(new Icons.Regular.Size20.EarthLeaf())">
-                <TitleTemplate>Who is Smuggler?</TitleTemplate>
-                <ChildContent>
-                    <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafOne())">Item 3.1</FluentNavLink>
-                    <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafTwo())">Item 3.2</FluentNavLink>
-                    <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Smuggler</FluentNavLink>  
-                </ChildContent>
-            </FluentNavGroup>
-            <!-- End Private -->
-
-            <!-- Start Public Services  -->
-            <FluentNavGroup OnClick="OnClick" Icon="@(new Icons.Regular.Size20.EarthLeaf())">
-                <TitleTemplate>Services(Auth)</TitleTemplate>
-                <ChildContent>
-                    <FluentNavLink Href="oilnet" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Oil Net</FluentNavLink>
-                    <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">'Beat'Coin</FluentNavLink>
-                    <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Smuggler</FluentNavLink>                    
-                </ChildContent>
-            </FluentNavGroup>
-            <!-- End Public Services  -->
-
-            <!-- Start Sample -->
-            <FluentNavLink Href="about" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" IconColor="Color.Accent">About</FluentNavLink>
-            @* <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" IconColor="Color.Accent">Weather</FluentNavLink> *@
-            <!-- End Sample -->
-        </FluentNavMenu>
-    </nav>
-</div>
+<FluentNavMenu Id="main-menu" Width="300" Collapsible="true" Title="Navigation menu" @bind-Expanded="expanded" CustomToggle="true">
+    <FluentNavLink Href="/" Match="NavLinkMatch.All" Icon="@(new Icons.Regular.Size20.Home())" IconColor="Color.Accent">Home</FluentNavLink>
+    <!-- Start Private -->
+    <FluentNavGroup Icon="@(new Icons.Regular.Size20.EarthLeaf())">
+        <TitleTemplate>Who is Smuggler?</TitleTemplate>
+        <ChildContent>
+       @*      <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafOne())">Item 3.1</FluentNavLink>
+            <FluentNavLink OnClick="OnClick" Icon="@(new Icons.Regular.Size20.LeafTwo())">Item 3.2</FluentNavLink> *@
+            <FluentNavLink Href="Counter" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Counter</FluentNavLink>
+            <FluentNavLink Href="Weather" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Weather</FluentNavLink>
+            <FluentNavLink Href="Private/Chartsample" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">chartsample</FluentNavLink>
+        </ChildContent>
+    </FluentNavGroup>
+    <!-- End Private -->
+    <!-- Start Public Services  -->
+    <FluentNavGroup Icon="@(new Icons.Regular.Size20.EarthLeaf())">
+        <TitleTemplate>Services(Authorized)</TitleTemplate>
+        <ChildContent>
+            <FluentNavLink Href="Services/OilNetwork" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Oil Network</FluentNavLink>
+            <FluentNavLink Href="Services/BeatCoin" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">'Beat'Coin</FluentNavLink>
+        </ChildContent>
+    </FluentNavGroup>
+    <!-- End Public Services  -->
+    <!-- Start Sample -->
+    <FluentNavLink Href="About" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" IconColor="Color.Accent">About</FluentNavLink>
+    <!-- End Sample -->
+</FluentNavMenu>
 
 @code {
-    private bool expanded = true;
-
-    void OnClick(MouseEventArgs e)
-    {
-        Debug.WriteLine("NavMenu item clicked");
-    }
+    private bool expanded = true;    
 }

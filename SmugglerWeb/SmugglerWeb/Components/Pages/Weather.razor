@@ -1,29 +1,32 @@
-﻿@page "/weather"
+﻿@page "/Weather"
+@rendermode InteractiveAuto
 @attribute [StreamRendering]
-
-<PageTitle>Smuggler - Weather</PageTitle>
-
-<h1>Weather</h1>
+@inject NavigationManager Nav
+@inject PageHeaderState Header
 
 <p>This component demonstrates showing data.</p>
 
 <!-- This page is rendered in SSR mode, so the FluentDataGrid component does not offer any interactivity (like sorting). -->
 <FluentDataGrid Id="weathergrid" Items="@forecasts" GridTemplateColumns="1fr 1fr 1fr 2fr" Loading="@(forecasts == null)" Style="height:204px;" TGridItem="WeatherForecast">
-    <PropertyColumn Title="Date" Property="@(c => c!.Date)" Align="Align.Start"/>
-    <PropertyColumn Title="Temp. (C)" Property="@(c => c!.TemperatureC)" Align="Align.Center"/>
-    <PropertyColumn Title="Temp. (F)" Property="@(c => c!.TemperatureF)" Align="Align.Center"/>
-    <PropertyColumn Title="Summary" Property="@(c => c!.Summary)" Align="Align.End"/>
+    <PropertyColumn Title="Date" Property="@(c => c!.Date)" Align="Align.Start" />
+    <PropertyColumn Title="Temp. (C)" Property="@(c => c!.TemperatureC)" Align="Align.Center" />
+    <PropertyColumn Title="Temp. (F)" Property="@(c => c!.TemperatureF)" Align="Align.Center" />
+    <PropertyColumn Title="Summary" Property="@(c => c!.Summary)" Align="Align.End" />
 </FluentDataGrid>
 
 @code {
     private IQueryable<WeatherForecast>? forecasts;
 
+     protected override void OnParametersSet()
+    {
+        Header.Set("Weather");
+    }
+
     protected override async Task OnInitializedAsync()
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
 
-
-        await Task.Delay(1000);
+        //await Task.Delay(1000);
 
         var startDate = DateOnly.FromDateTime(DateTime.Now);
         var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
@@ -34,6 +37,8 @@
             Summary = summaries[Random.Shared.Next(summaries.Length)]
         }).AsQueryable();
     }
+
+   
 
     private class WeatherForecast
     {
