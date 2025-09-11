@@ -18,9 +18,20 @@
             </FluentNavGroup>
             <!-- End Private -->
 
+            <!-- Start Public Services  -->
+            <FluentNavGroup OnClick="OnClick" Icon="@(new Icons.Regular.Size20.EarthLeaf())">
+                <TitleTemplate>Services(Auth)</TitleTemplate>
+                <ChildContent>
+                    <FluentNavLink Href="oilnet" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Oil Net</FluentNavLink>
+                    <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">'Beat'Coin</FluentNavLink>
+                    <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.VehicleTruckProfile())" IconColor="Color.Accent">Smuggler</FluentNavLink>                    
+                </ChildContent>
+            </FluentNavGroup>
+            <!-- End Public Services  -->
+
             <!-- Start Sample -->
-            <FluentNavLink Href="counter" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" IconColor="Color.Accent">Counter</FluentNavLink>
-            <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" IconColor="Color.Accent">Weather</FluentNavLink>
+            <FluentNavLink Href="about" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" IconColor="Color.Accent">About</FluentNavLink>
+            @* <FluentNavLink Href="weather" Icon="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" IconColor="Color.Accent">Weather</FluentNavLink> *@
             <!-- End Sample -->
         </FluentNavMenu>
     </nav>

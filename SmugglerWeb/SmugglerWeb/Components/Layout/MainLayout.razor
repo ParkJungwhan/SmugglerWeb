@@ -1,23 +1,39 @@
 ﻿@inherits LayoutComponentBase
 
+<FluentToastProvider />
+<FluentDialogProvider />
+<FluentTooltipProvider />
+<FluentMessageBarProvider />
+<FluentMenuProvider />
+
 <FluentLayout>
     <FluentHeader>
-        SmugglerWeb
+        @sitetitle
     </FluentHeader>
     <FluentStack Class="main" Orientation="Orientation.Horizontal" Width="100%">
         <NavMenu />
+
+        <FluentDivider Style="height: 420px;" Role="DividerRole.Presentation" Orientation="Orientation.Vertical"></FluentDivider>
+
         <FluentBodyContent Class="body-content">
+            
             <div class="content">
                 @Body
             </div>
         </FluentBodyContent>
     </FluentStack>
+    
+
     <FluentFooter>
-        <FluentIcon Value="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Mail())" />
-        @* <FluentIcon Value="@(new Icons.Regular.Size20.Navigation())" Color="Color.Fill" /> *@
-        <a href="https://www.fluentui-blazor.net" target="_blank">Documentation and demos</a>
+        <FluentLabel>
+            <FluentIcon Value="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Mail())" />
+            <a href="mailto:smug.kr@gmail.com">메일로 문의</a>
+        </FluentLabel>
+        
         <FluentSpacer />
-        <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor" target="_blank">About Blazor</a>
+        <FluentLabel>
+            ⓒ pjh2104@gmail.com. 2025.
+        </FluentLabel>
     </FluentFooter>
 </FluentLayout>
 
@@ -26,3 +42,7 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+@code{
+    string sitetitle = "SmugglerWeb";
+}

@@ -1,0 +1,51 @@
+﻿@page "/about"
+@rendermode InteractiveAuto
+
+
+<PageTitle>Smuggler - About</PageTitle>
+
+<!-- title -->
+<FluentBreadcrumb>
+    <FluentBreadcrumbItem Href="/">
+         Home
+        <FluentIcon Value="@(new Icons.Regular.Size16.Home())" Color="@Color.Neutral" Slot="start" />
+    </FluentBreadcrumbItem>
+    <FluentBreadcrumbItem Href="/about">
+        About
+        <FluentIcon Value="@(new Icons.Regular.Size16.Clipboard())" Color="@Color.Neutral" Slot="start" />
+    </FluentBreadcrumbItem>    
+</FluentBreadcrumb>
+
+<div>
+    <span><FluentLabel Typo="Typography.H1"> @title</FluentLabel></span>
+    <FluentSpacer />
+    <FluentLabel Alignment="HorizontalAlignment.Right">Latest Time : @latestdatetime </FluentLabel>
+</div>
+<FluentDivider Style="width: 100%;" Role="DividerRole.Presentation"></FluentDivider>
+<!-- end title -->
+
+<!-- main -->
+<FluentBodyContent >
+    <FluentStack VerticalGap="10" Orientation="Orientation.Vertical">
+        <FluentLabel Typo="Typography.H3"> This is the first lesson.</FluentLabel>
+            <FluentLabel Typo="Typography.H4"> Only you know the good thing.</FluentLabel>
+        <FluentLabel Typo="Typography.H3"> This is the second lesson now.</FluentLabel>
+            <FluentLabel Typo="Typography.H4"> 슬픈도 너만 갖기</FluentLabel>
+            <div>
+                I hate this.
+            </div>
+        <FluentLabel Typo="Typography.H3"> This is the third lesson, finally.</FluentLabel>
+        <div>
+            (건들건들)
+        </div>
+            <FluentLabel Typo="Typography.H4"> 일희일비 않기</FluentLabel>
+        <div>
+            I hate this.
+        </div>
+    </FluentStack>
+</FluentBodyContent>
+
+@code {
+    string title = "About - Thank you";
+    string latestdatetime = "2025/09/11 12:53";
+}
