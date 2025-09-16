@@ -1,15 +1,27 @@
 ﻿@using Microsoft.FluentUI.AspNetCore.Components
 
-<div>
-    <FluentLabel Typo="Typography.H1">@Title</FluentLabel>
-    <FluentSpacer />
-    <FluentLabel Alignment="HorizontalAlignment.Right">
-        Latest Time : @LatestDateTime
-    </FluentLabel>
-</div>
-<FluentDivider Style="width: 100%;" Role="DividerRole.Presentation" />
+<FluentLabel Typo="Typography.H1">@Title</FluentLabel>
+
+<FluentGrid Justify="JustifyContent.FlexEnd" Style="overflow: hidden; padding: 4px;">
+    <FluentGridItem Justify="JustifyContent.FlexEnd" Gap="20px">
+        @if (@ShowPublishDateTime == false)
+        {
+            <FluentLabel>
+                Publish Time : @PublishDateTime
+            </FluentLabel>
+        }
+        <FluentLabel>
+            Latest Time : @LatestDateTime
+        </FluentLabel>
+    </FluentGridItem>
+</FluentGrid>
+
+<FluentDivider Style="width: 100%; margin-bottom:10px" Role="DividerRole.Presentation" />
 
 @code {
-    [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Title { get; set; } = "{Title}";
+    [Parameter] public bool ShowPublishDateTime { get; set; } 
+    [Parameter] public string? PublishDateTime { get; set; }
+    //[Parameter] public string? PublishDateTime { get; set; } = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
     [Parameter] public string? LatestDateTime { get; set; } = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
 }

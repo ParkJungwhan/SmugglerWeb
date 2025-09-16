@@ -1,0 +1,13 @@
+﻿@page "/Guestbook"
+@rendermode InteractiveAuto
+@inject NavigationManager Nav
+@inject PageHeaderState Header
+
+<h3>GuestBook</h3>
+
+@code {
+    protected override void OnParametersSet()
+    {
+        Header.Set("GuestBook", DateTime.Parse("2025-09-16 01:02:03"));
+    }
+}

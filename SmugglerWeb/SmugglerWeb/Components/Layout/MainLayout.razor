@@ -12,20 +12,16 @@
 
     <PageTitle>Smuggler - @Header.Title</PageTitle>
 
-    <FluentStack Class="main" Orientation="Orientation.Horizontal" >
+    <FluentStack Class="main" Orientation="Orientation.Horizontal">
         <NavMenu />
-        @* <FluentDivider Role="DividerRole.Presentation" Orientation="Orientation.Vertical"/> *@
-       @*  <FluentBodyContent Class="body-content"> *@
         <FluentBodyContent>
-                <CascadingValue Value="_bcState">
-                    <div class="content">
+            <CascadingValue Value="_bcState">
+                <div class="content">
                     @if (!_bcState.Hide)
                     {
                         <BreadcrumbComponents NameMap="_bcState.NameMap" Overrides="_bcState.Overrides" />
                     }
-                    
                     <PageHeader Title="@Header.Title" LatestDateTime="@Header.LatestDateTime" />
-
                     @Body
                 </div>
             </CascadingValue>
@@ -37,7 +33,7 @@
             <FluentIcon Value="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size20.Mail())" />
             <a href="mailto:smug.kr@gmail.com">메일로 문의</a>
         </FluentLabel>
-        
+
         <FluentSpacer />
         <FluentLabel>
             ⓒ pjh2104@gmail.com. 2025.
@@ -51,7 +47,7 @@
     <span class="dismiss">🗙</span>
 </div>
 
-@code{
+@code {
     string sitetitle = "SmugglerWeb";
 
     protected override void OnInitialized()
