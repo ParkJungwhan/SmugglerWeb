@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-NewSmugglerWeb-12fff858-f8ed-47dd-b80e-b4ae92d7d49e</UserSecretsId>
+    <UserSecretsId>aspnet-NewSmugglerWeb-f6304e4c-8114-4316-a4a0-2a061bddda08</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

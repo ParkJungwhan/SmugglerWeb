@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.12.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SmugglerWebLib\SmugglerWebLib.csproj" />
+  </ItemGroup>
+
 </Project>
